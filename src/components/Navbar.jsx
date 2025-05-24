@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-70 backdrop-blur text-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold cursor-pointer">Sachin</div>
+        <div className="text-2xl font-bold cursor-pointer">Sachin Kumar</div>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-8">
