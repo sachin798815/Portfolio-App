@@ -35,12 +35,15 @@ const About = () => {
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-gray-300 mb-4">
-            I'm a front-end developer focused on building beautiful and responsive websites using modern technologies like HTML, CSS, JavaScript, React and more. I'm passionate about learning and improving continuously.
+            I'm a front-end developer focused on building beautiful and
+            responsive websites using modern technologies like HTML, CSS,
+            JavaScript, React and more. I'm passionate about learning and
+            improving continuously.
           </p>
 
           <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-2">Tech Stack:</h3>
-            <ul className="grid grid-cols-2 gap-2 text-sm text-gray-400">
+            <h3 className="text-2xl font-semibold mb-2">Tech Stack:</h3>
+            <ul className="grid grid-cols-2 gap-2 text-base text-gray-300">
               <li>✔ HTML5</li>
               <li>✔ CSS3</li>
               <li>✔ Bootstrap</li>
@@ -54,20 +57,44 @@ const About = () => {
             </ul>
           </div>
 
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold mb-2">
+              React Ecosystem Libraries:
+            </h3>
+            <ul className="grid grid-cols-2 gap-2 text-sm text-gray-300">
+              <li>✔ React Router DOM</li>
+              <li>✔ Redux & React Redux</li>
+              <li>✔ React Toastify</li>
+              <li>✔ React Tabs</li>
+              <li>✔ React Text Editor</li>
+            </ul>
+          </div>
+
           <div>
-            <h3 className="text-xl font-semibold mb-2">Education:</h3>
-            <ul className="text-sm text-gray-400 space-y-2">
+            <h3 className="text-2xl font-semibold mb-2">Education:</h3>
+            <ul className="text-base text-gray-300 space-y-2">
               <li>
-                <strong>Guru Jambheshwar University of Science and Technology</strong>, Hisar, Haryana  
+                <strong>
+                  Guru Jambheshwar University of Science and Technology
+                </strong>
+                , Hisar, Haryana
                 <br />
                 B.Tech in Information Technology
               </li>
               <li>
-                <strong>New Yashoda Public School</strong>, Hisar, Haryana  
+                <strong>New Yashoda Public School</strong>, Hisar, Haryana
                 <br />
                 Schooling
               </li>
             </ul>
+          </div>
+
+          <div className="mt-6">
+            <h3 className="text-2xl font-semibold mb-2">Hobbies:</h3>
+            <p className="text-gray-300 text-base">
+              <li>Traveling</li>
+              <li>Scenic photography</li>
+            </p>
           </div>
         </div>
       </motion.div>

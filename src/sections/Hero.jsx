@@ -55,7 +55,7 @@ const Hero = () => {
           </p>
           <div className="text-center">
             <button className="bg-blue-800 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
-              Learn More
+              See Skills
             </button>
           </div>
         </motion.div>
