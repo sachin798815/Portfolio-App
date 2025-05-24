@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react"; // for icons
-import { Link } from "react-scroll"; // for smooth scroll
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const navLinks = ["Home", "About", "Projects", "Contact"];
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Projects", path: "/projects" },
+  { name: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,18 +16,18 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-70 backdrop-blur text-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold cursor-pointer">Sachin Kumar</div>
+        <div className="text-2xl font-bold cursor-pointer">Sachin</div>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+            <Link
+              key={link.name}
+              to={link.path}
               className="hover:text-blue-400 transition"
             >
-              {link}
-            </a>
+              {link.name}
+            </Link>
           ))}
         </nav>
 
@@ -32,7 +37,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.nav
@@ -44,14 +49,14 @@ const Navbar = () => {
           >
             <ul className="flex flex-col space-y-4 mt-2">
               {navLinks.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                <Link
+                  key={link.name}
+                  to={link.path}
                   className="text-white hover:text-blue-400 transition"
                   onClick={() => setIsOpen(false)}
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               ))}
             </ul>
           </motion.nav>
