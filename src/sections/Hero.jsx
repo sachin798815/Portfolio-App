@@ -54,7 +54,7 @@ const Hero = () => {
             I love turning ideas into clean, efficient code and bringing designs to life.
           </p>
           <div className="text-center">
-            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
+            <button className="bg-blue-800 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
               Learn More
             </button>
           </div>
@@ -82,7 +82,7 @@ const Hero = () => {
             (React, Redux, Context API, Firebase, Tailwind CSS, and more)
           </p>
           <div className="text-center">
-            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
+            <button className="bg-blue-800 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
               See Projects
             </button>
           </div>

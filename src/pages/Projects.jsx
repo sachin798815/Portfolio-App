@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 import RestaurantImg from "../assets/restaurant.png";
 import MailMateImg from "../assets/mailmate.png";
 import StyleNestImg from "../assets/stylenest.png";
@@ -29,7 +31,7 @@ const projects = [
     liveLink: "https://style-nest-sepia.vercel.app/",
     repoLink: "https://github.com/sachin798815/style-nest",
     image: StyleNestImg,
-    tech: ["React", "Vite", "Tailwind CSS", "Toastify", "Firebase sdk"],
+    tech: ["React", "Vite", "Tailwind CSS", "Toastify", "Firebase SDK"],
   },
 ];
 
@@ -56,9 +58,13 @@ const cardVariants = {
 };
 
 const Projects = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
   return (
-    <section className="relative z-10 min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 px-4 overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.03),_transparent_60%)]" />
+    <section className="relative z-10 min-h-screen bg-gradient-to-br from-blue-900 to-black text-white py-20 px-4 overflow-hidden">
+      {/* subtle radial gradient overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.05),_transparent_60%)]" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
@@ -71,11 +77,11 @@ const Projects = () => {
         </motion.h2>
 
         <motion.div
+          ref={containerRef}
           className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          animate={isInView ? "show" : "hidden"}
         >
           {projects.map((project, index) => (
             <motion.div
