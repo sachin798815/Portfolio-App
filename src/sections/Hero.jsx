@@ -11,7 +11,10 @@ const Hero = () => {
 
   // Detect when each card enters the viewport
   const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
-  const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
+  const projectsInView = useInView(projectsRef, {
+    once: true,
+    margin: "-100px",
+  });
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-blue-900 to-black text-white px-6 py-20 flex flex-col items-center">
@@ -26,7 +29,8 @@ const Hero = () => {
           Hi, I'm <span className="text-blue-400">Sachin</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300">
-          Passionate Front-End Developer building interactive, responsive websites and web apps.
+          Passionate Front-End Developer building interactive, responsive
+          websites and web apps.
         </p>
       </motion.div>
 
@@ -46,12 +50,16 @@ const Hero = () => {
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
-          onKeyDown={(e) => { if(e.key === 'Enter' || e.key === ' ') navigate("/about"); }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") navigate("/about");
+          }}
         >
           <h2 className="text-3xl font-semibold mb-4 text-center">About Me</h2>
           <p className="text-gray-300 leading-relaxed mb-6">
-            I specialize in React, Vite, and Tailwind CSS, crafting smooth user experiences.
-            I love turning ideas into clean, efficient code and bringing designs to life.
+            I specialize in React, Vite, and Tailwind CSS, crafting smooth user
+            experiences. I love turning ideas into clean, efficient code and
+            bringing designs to life. I’m always eager to learn new technologies
+            and improve my skills.
           </p>
           <div className="text-center">
             <button className="bg-blue-800 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
@@ -71,12 +79,15 @@ const Hero = () => {
           animate={projectsInView ? { opacity: 1, y: 0 } : {}}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          onKeyDown={(e) => { if(e.key === 'Enter' || e.key === ' ') navigate("/projects"); }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") navigate("/projects");
+          }}
         >
           <h2 className="text-3xl font-semibold mb-4 text-center">Projects</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
-            From restaurant delivery apps to email clients and fashion e-commerce sites,
-            my projects showcase responsive design, clean code, and modern frontend technologies.
+            From restaurant delivery apps to email clients and fashion
+            e-commerce sites, my projects showcase responsive design, clean
+            code, and modern frontend technologies.
           </p>
           <p className="text-gray-400 text-sm italic mb-6 text-center">
             (React, Redux, Context API, Firebase, Tailwind CSS, and more)
